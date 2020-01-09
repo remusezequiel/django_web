@@ -1,0 +1,126 @@
+{% load staticfiles %}
+
+<!DOCTYPE html>
+<html lang = "en">
+    <!-- Aca se declaran todos los estilos y demas -->
+    <head>
+        <meta http-equiv="Content-type" content="text/html"; charset="utf-8"/>
+
+        <title>{{ contenido.nombre_sitio }}</title>
+
+        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+        <meta name="keybords" content="{{ palabras_claves }}" />
+        <meta name="description" content="{{ descripcion }}" />
+
+        <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+        <link rel="stylesheet" type="text/css" href="{% static 'appBase/css/style.css' %}">
+        <link rel="stylesheet" type="text/css" href="{% static 'appBase/main.css' %}">
+
+        <!-- Custom styles for this template -->
+        <link href="carousel.css" rel="stylesheet">
+        <link href="{% static 'vistaprevia/css/jquery-ui.css' %}" rel="stylesheet">
+        <link href="{% static 'vistaprevia/css/jquery-ui.min' %}" rel="stylesheet">
+
+        <script type="text/javascript" src="{% static 'vistaprevia/js/jquery.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vistaprevia/js/jquery-ui.js' %}"></script>
+        <script type="text/javascript" src="{% static 'vistaprevia/js/bootstrap.js' %}"></script>
+
+    </head>
+    <!--
+        Body sera el cuerpo de la pagina
+    -->
+    <body>
+        <header>
+        	<div class="jumbotron jumbotron-fluid" style="background-image: url({% static  'aplicacionBase/images/cabecera.JPG' %});">
+			  <div class="container">
+			    <h1 class="display-4">Un Paseo Por La Ciencia</h1>
+			    <p class="lead" style="color:#fff">Divulgación y algo más.</p>
+			  </div>
+			</div>
+
+            <div class="container">
+                <div class="row">
+                    <div class="col-sm-12 mx-auto" style="margin-top : 10px">
+                        <!--BARRA DE NAVEGACION -->
+                        <nav class="navbar navbar-expand-lg navbar-light bg-light" >
+                                <ul class="nav nav-pills">
+                  								  <li class="nav-item">
+                  								    <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">
+                  								    	{{ contenido.nombre_sitio }}
+                  									</a>
+                  								  </li>
+                  								  <li class="nav-item">
+                  								    <a class="nav-link active" href="{% url 'index' %}">Inicio</a>
+                  								  </li>
+                                    <li class="nav-item">
+                                      <a class="nav-link" href="{% url 'noticias' %}" style="color: black">NotiCiencia</a>
+                                    </li>
+                  								  <li class="nav-item">
+                  								    <a class="nav-link" href="" style="color: black">Apuntes</a>
+                  								  </li>
+                  								  <li class="nav-item">
+                  								    <a class="nav-link" href="{% url 'contacto' %}" style="color: black">Contacto</a>
+                  								  </li>
+                  								</ul>
+								                    <!--REDES-->
+                                    <ul class="navbar-nav mr-auto mx-auto" >
+                                        <li class="nav-item active">
+                                            <a class="nav-link " href="#">
+                                                <img src="{% static  'aplicacionBase/images/face.png' %}" width="30" height="30" alt="">
+                                            </a>
+                                        </li>
+                                        <li class="nav-item active">
+                                            <a class="nav-link " href="#">
+                                                <img src="{% static  'aplicacionBase/images/insta.png' %}" width="30" height="30" alt="">
+                                            </a>
+                                        </li>
+                                    </ul>
+                                    <!-- Navbar Right Side -->
+                                    <div class="nav nav-pills nav-fill">
+                                      <a class=" mr-2 nav-item nav-link active" href="#"> Unete! </a>
+                                      <a class="nav-item nav-link active" href="#"> Registrate </a>
+                                    </div>
+                                </div>
+                            </nav>
+                        </div>
+                    </div>
+                </div>
+        </header>
+
+
+            <!--
+                A partir de aca empieza el contenido de la pagina
+            -->
+            {% block content %}{% endblock %}
+            {% block scripts %}{% endblock %}
+        <!-- Footer -->
+        <footer >
+		<nav class="navbar navbar-expand-lg navbar-light bg-light" >
+   			 <ul class="navbar-nav mr-auto mx-auto" >
+                <li class="nav-item active">
+                    <a class="nav-link " title="Instagram" href="https://www.instagram.com/ezequielremus/" target="new">
+     			 		<img src="{% static  'aplicacionBase/images/insta.png' %}" alt="Instagram">
+     			 	</a>
+                </li>
+                <li>
+    			 	<a class="nav-link " title="Facebook" href="https://www.facebook.com/Ezequiel.A.Remus" target="new">
+    			 		<img src="{% static  'aplicacionBase/images/face.png' %}" alt="Facebook">
+    			 	</a>
+    			 	<li>
+    			 	<a class="nav-link " title="Github" href="https://github.com/remusezequiel" target="new">
+    			 		<img src="{% static  'aplicacionBase/images/git4.png' %}" alt="github">
+    			 	</a>
+    			 </li>
+            </ul>
+ 		 </nav>
+	</footer>
+      <!-- Footer -->
+        <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+
+        <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+        <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+
+    </body>
+
+</html>

@@ -1,0 +1,311 @@
+@@font-face {
+  font-family: "OpenSansCondensed-LightItalic";
+  src: url("./fonts/OpenSansCondensed-LightItalic.eot"); /* IE9 Compat Modes */
+  src: url("./fonts/OpenSansCondensed-LightItalic.eot?#iefix") format("embedded-opentype"), /* IE6-IE8 */
+    url("./fonts/OpenSansCondensed-LightItalic.otf") format("opentype"), /* Open Type Font */
+    url("./fonts/OpenSansCondensed-LightItalic.svg") format("svg"), /* Legacy iOS */
+    url("./fonts/OpenSansCondensed-LightItalic.ttf") format("truetype"), /* Safari, Android, iOS */
+    url("./fonts/OpenSansCondensed-LightItalic.woff") format("woff"), /* Modern Browsers */
+    url("./fonts/OpenSansCondensed-LightItalic.woff2") format("woff2"); /* Modern Browsers */
+  font-weight: normal;
+  font-style: normal;
+}
+*{
+	font-family: OpenSansCondensed-LightItalic;
+}
+
+#contenido_principal_noticias
+{
+
+	width: 960px;
+	height: 2080px;
+	margin-top: auto;
+	margin-left: auto;
+	margin-right: auto;
+	background-color:#000000;
+	
+}
+
+/*******************| Seccion de la botonera |****************/
+#contenido_principal_noticias nav {
+	width: 200px;
+	height: 1830px;
+	padding: 10px;
+	box-sizing: border-box;
+	background-color: #000000;
+	line-height: 50px;
+	font-weight: bold;	
+	float: left;
+}
+#contenido_principal_noticias nav ul {
+	 
+    margin: 2px;
+	padding: 0px;
+	box-sizing: border-box;
+	align-content: center;
+	border: 2px solid #000000;
+	list-style-type: none;
+	
+}	
+#contenido_principal_noticias nav ul li{
+	border: 1px solid #000000;
+
+	list-style-type: none;
+	-moz-box-shadow: 0px 0px 30px #0362a5;
+	  -webkit-box-shadow: 0px 0px 30px #0362a5;
+	  box-shadow: 0px 0px 30px #0362a5;
+	  
+	  padding: 10px;
+	  border: 1px solid #66ff00;
+	  border-radius: 5px;
+}
+
+#contenido_principal_noticias nav ul li a
+{
+	display: inline-grid;
+	color: #ffffff;
+	text-decoration: none;
+	margin-right: 20px;
+}
+#contenido_principal_noticias nav ul li a:hover
+{
+	color: rgba(255, 255, 255, 0.6);
+	transform: scale(1.1,1.1);
+}
+#contenido_principal_noticias nav ul li a
+ {
+    animation:#contenido_principal_noticias .5s cubic-bezier(.215,.61,.355,1.000) both
+}
+
+@keyframes contenido_principal_noticias {
+    0% {letter-spacing:-.5em;opacity:0}
+    40% {opacity:.6}
+    100% {opacity:1}
+}
+
+
+
+#seccion_div_noticias
+{
+	width: 760px;
+	height: 1830px;
+	background-color: #000000;
+	color:#ffffff;
+	padding: 10px;
+	box-sizing: border-box;;
+	float: right;
+}
+#seccion_div_noticias h3
+{
+	color: #449ae5;
+	text-align: center;
+	margin-top: 10px;
+}
+
+#seccion_div_noticias span
+{
+	color:#42f459;
+}
+
+#seccion_div_noticias a img
+{
+	width: 100px;
+	height: 140px;
+	margin-left: 250px;
+	margin-right: 250px;	
+}
+#seccion_div_noticias a img:hover
+{
+	color: rgba(255, 255, 255, 0.6);
+	transform: scale(1.1,1.1);
+}
+#seccion_div_noticias a img
+ {
+    animation:#seccion_div_noticias .5s cubic-bezier(.215,.61,.355,1.000) both
+}
+
+@keyframes #seccion_div_noticias  {
+    0% {letter-spacing:-.5em;opacity:0}
+    40% {opacity:.6}
+    100% {opacity:1}
+}
+
+
+#imagen_bohr
+{
+	width: 100px;
+	height: 140px;
+	background-image: url(bohr.JPG);
+	
+	margin-left: 250px;
+	margin-right: 250px;
+}
+
+#imagen_segundoPostulado
+{
+	width: 170px;
+	height: 70px;
+	background-image: url(http://www.eis.uva.es/~qgintro/atom/imagenes/seg_postulado.gif);
+	float:initial;
+	margin-left: 250px;
+	margin-right: 250px;	
+}
+
+#imagen_tercerPostulado
+{
+	width: 170px;
+	height: 70px;
+	background-image: url(http://www.eis.uva.es/~qgintro/atom/imagenes/terc_postula.gif);
+	float:initial;
+	margin-left: 250px;
+	margin-right: 250px;	
+}
+
+
+
+
+/************************************************************************/
+/*********************    MEDIA     *************************************/
+/************************************************************************/
+@media all and (min-width: 600px) and (max-width: 1023px)
+{
+	#contenido_principal_noticias
+	{
+
+		width: 580px;
+		height: 2080px;
+	}
+
+	/*******************| Seccion de la botonera |****************/
+	#contenido_principal_noticias nav {
+		width: 90%;
+		height: auto;
+		padding: 5px;
+		box-sizing: border-box;
+		background-color: #000000;
+		/*text-align: center;*/
+		line-height: 45px;
+		font-weight: bold;	
+		float: right;
+	}
+	#contenido_principal_noticias nav ul {
+		display: inline; 
+	    display: inline;
+		margin: 0;
+		padding: 0;
+		border-radius: 5px;
+		list-style-type: none;
+	}	
+	#contenido_principal_noticias nav ul li{
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		line-height: 10px;
+		padding: 3px;
+	}
+
+	#contenido_principal_noticias nav ul li a
+	{
+		display: inline-grid;
+		font-size:16px; 
+		color: #ffffff;
+		text-decoration: none;
+		margin-right: 0px;
+		margin-bottom: 0px;
+	}
+	/*******************| Seccion de la noticias |****************/
+	#seccion_div_noticias
+	{
+		width: 580px;
+		height: 1830px;
+	}
+
+}/*fin media 600 * 1023*/
+
+
+/************************************************************************/
+/*********************    MEDIA     *************************************/
+/************************************************************************/
+@media all and (max-width: 599px) 
+{
+	#contenido_principal_noticias
+	{
+		width: 90%;
+		height: auto;
+	}
+
+	/*******************| Seccion de la botonera |****************/
+	#contenido_principal_noticias nav {
+		width: 100%;
+		height: auto;
+		padding: 5px;
+		box-sizing: border-box;
+		background-color: #000000;
+		/*text-align: center;*/
+		line-height: 45px;
+		font-weight: bold;	
+		float: right;
+	}
+	#contenido_principal_noticias nav ul {
+		display: inline; 
+	    display: inline;
+		margin: 0;
+		padding: 0;
+		border-radius: 5px;
+		list-style-type: none;
+	}	
+	#contenido_principal_noticias nav ul li{
+		display: inline-block;
+		margin-left: auto;
+		margin-right: auto;
+		line-height: 10px;
+		padding: 3px;
+	}
+
+	#contenido_principal_noticias nav ul li a
+	{
+		display: inline-grid;
+		font-size:16px; 
+		color: #ffffff;
+		text-decoration: none;
+		margin-left: auto;
+		margin-right: auto;
+	}
+
+
+	#seccion_div_noticias
+	{
+		width: 90%;
+		height: auto;
+		margin-left: auto;
+		margin-right: auto;
+		float:none;	
+	}
+	#seccion_div_noticias a img
+	{
+		margin-left: auto;
+		margin-right: auto;
+		float:none;	
+	}
+
+	#imagen_bohr
+	{
+		margin-left: auto;
+		margin-right: auto;
+		float:none;	
+	}
+
+	#imagen_segundoPostulado
+	{
+		margin-left: auto;
+		margin-right: auto;		
+		float:none;	
+	}
+
+	#imagen_tercerPostulado
+	{
+		margin-left: auto;
+		margin-right: auto;
+		float:none;	
+	}
+}/*fin media <599*/

@@ -1,0 +1,24 @@
+{% extends "appBase/plantilla.html" %}
+{% load staticfiles %}
+{% block content %}
+  {% for post in posts %}
+  <div class="container">
+    <div class="row">
+        <div class="col-sm-12 mx-auto" style="margin-top : 10px">
+          <div class="card w-75">
+            <div class="card-body">
+              <h2 class="card-title">{{ post.titulo }}</h5>
+              {# NO olvidarse el safe cuando usas ckeditor #}
+              <span class="border-bottom-0">
+              <p class="card-text">{{ post.encabezado | safe }}</p>
+              </span>
+              <p class="card-text mb-4">{{ post.contenido | safe }}</p>
+              <a href="{% url 'noticias' %}" class="btn btn-primary"> Volver Arriba </a>
+            </div>
+          </div>
+    </div>
+  </div>
+</div>
+  
+  {% endfor %}
+{% endblock content %}

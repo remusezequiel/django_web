@@ -1,0 +1,49 @@
+{% extends "appBase/plantilla.html" %}
+{% load staticfiles %}
+
+{% block content %}
+
+	<div class="container">
+	    <div class="row">
+	        <div class="col-sm-12 mx-auto" style="margin-top : 10px">
+				<div class="jumbotron" style="background-image: url({% static  'aplicacionBase/images/bienvenidos.JPG' %});">
+				  <h1 class="display-4" style="color: #fff">Bienvenidos!</h1>
+				  <p class="lead" style="color: #fff">
+				  	Esta es una pagina personal en la cual voy a tratar de relatar desde historias de sucesos cientificos importantes, descubrimientos recientes y apuntes que me hayan parecido utiles. La idea princimal es la divulgacion de este gran
+				  	camino interminable de entender las cosas que nos rodean.
+				  </p>
+				  <hr class="my-4">
+				</div>
+			</div>
+		</div>
+	</div>
+	{% for post in posteo %}
+
+	<div class="container">
+		<div class="row">
+				<div class="col-sm-12 mx-auto" style="margin-top : 10px">
+					<div class="card w-75">
+						<div class="card-body">
+							<div class="article-metadata">
+								<a class="mr-2" href="#">{{ post.autor }}</a>
+								<small class="text-muted">{{ post.fecha_posteo|date:"d/m/Y" }}</small>
+							</div>
+							<h2 class="card-title">{{ post.titulo }}</h5>
+							{# NO olvidarse el safe cuando usas ckeditor #}
+							<span class="border-bottom-0">
+							<p class="card-text">{{ post.encabezado | safe }}</p>
+							</span>
+							<div class="article-metadata">
+								<button type="button" class="mr-2 mb-2 btn btn-outline-info btn-sm" href="#">{{ post.asignatura }}</button>
+								<small class="text-muted">{{ post.tema }}</small>
+							</div>
+							<a href="{% url 'noticias' %}" class="btn btn-primary"> Ir al post </a>
+						</div>
+					</div>
+		</div>
+	</div>
+	</div>
+
+	{% endfor %}
+
+{% endblock %}

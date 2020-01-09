@@ -1,0 +1,56 @@
+{% extends 'appBase/plantilla.html '%}
+{% load static %}
+{% load i18n %}
+{% block content %}
+<div class="container">
+      <div class="row">
+          <div class="col-sm-12 mx-auto" style="margin-top : 10px">
+        <div class="jumbotron" style="background-image: url({% static  'aplicacionBase/images/bienvenidos.JPG' %});">
+          <h1 class="display-4" style="color: #fff">¿Tiene una noticia para contarnos?!</h1>
+          <p class="lead" style="color: #fff">
+              Como dije antes, esta página tiene como objetivo principal brindar información sobre noticias actuales sobre temas de interes cientifico. Por esta razón si usted tiene una noticia o apunte que quiera compartir puede mandarnos un mail y realizar su aporte dentro de <span> Un paseo por la ciencia</span>
+          </p>
+          <hr class="my-4">
+        </div>
+      </div>
+    </div>
+  </div>
+
+
+<div class="container">
+    <div class="row">
+    <div class="col-sm-6 mx-auto" style="margin-top : 70px">
+        <form action="{% url 'contacto'%}" method="post">
+        {% csrf_token %}
+        <div class="form-group">
+          <label for="id_email"> Ingrese Su Email </label>
+          <input name="email" type="email" class="form-control" id="id_email" placeholder="name@example.com">
+        </div>
+        <div class="from-group">
+            <label for="id_fecha"> Fecha de consulta </label>
+            <input name="fecha" type="text" class="form-control" id="id_fecha">
+        </div>
+        <div class="form-group">
+                <label for="id_asunto"> Asunto </label>
+                <input name="asunto" type="text" class="form-control" id="id_asunto" placeholder="Coloque Aqui su asunto">
+              </div>
+
+        <div class="form-group">
+          <label for="id_mensaje">Mensaje</label>
+          <textarea name="mensaje" class="form-control" id="exampleFormControlTextarea1" rows="3"></textarea>
+        </div>
+        <button type="submit" class="btn btn-primary mb-2"> Enviar </button>
+      </form>
+    </div>
+</div>
+</div>
+{% endblock %}
+
+{% block scripts %}
+<script src="{% static 'mysite/js/jquery-ui.js' %}"></script>
+<script>
+  $( "#id_fecha" ).datepicker({
+    inline: true
+  });
+</script>
+{% endblock %}
