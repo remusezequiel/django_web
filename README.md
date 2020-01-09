@@ -85,6 +85,9 @@ que igual es sencillo, es solo instalar en el entorno que estes parado
 6. **(Investigar esto)** (*[Heroku: Cloud Application Platform][6]*) 
 
 7. (*[psycopg][7]*)
+
+
+
 [1]: https://ckeditor.com
 [2]: https://www.djangoproject.com
 [3]: https://www.python.org/doc/versions/
