@@ -24,11 +24,13 @@
 3. De la lista elegis una version y corres : conda install *python=numeroDeVersionQueQueres*
 
 4. Despues, con esa version que elegiste creas el entorno
-............................................................
+
+___________________________________________________________
 * Otra forma mas resumida *
 Abris el prompt de anaconda y creas el entorno con el comando
 
 *conda create -n nombreDeEntorno python=numeroDeVersionQueQueres*
+
 ----------------------------------------------------------- 	
 
 Lo mas seguro es que ponga un txt con los requerimientos de cada proyecto
@@ -37,12 +39,14 @@ Lo mas seguro es que ponga un txt con los requerimientos de cada proyecto
 ## *Instalacion de django:*
 
 Se instala usando pip => *pip install django=numeroDeVersion*
+
 -----------------------------------------------------------
 
 -----------------------------------------------------------
 ## *Instalacion de requirements.txt:*
 
 *pip install -r requirements.txt* 
+
 -----------------------------------------------------------
 
 -----------------------------------------------------------
@@ -58,6 +62,7 @@ entorno activado y corres el comando:
 Y ahi esta, con eso podes ver lo que hay en cada proyecto, ya que la idea es
 que son ejercicios por lo que no se van a subir a Host mas pro, no de prueba 
 ni nada de eso.
+
 -----------------------------------------------------------
 
 En el caso que haya algun ejercicio que use bases de datos *postgresql* 
@@ -72,19 +77,19 @@ que igual es sencillo, es solo instalar en el entorno que estes parado
 -----------------------------------------------------------
 ## Referencias de interes:
 
-1. (*[ckEditor][1]*)
+1. *[ckEditor][1]*
 
-2. (*[Documentación de django][2]*)
+2. *[Documentación de django][2]*
 
-3. (*[Documentación por version de Python][3]*)
+3. *[Documentación por version de Python][3]*
 
-4. (*[Crispy Forms][4]*)
+4. *[Crispy Forms][4]*
 
-5. **(Investigar esto)** (*[Sphinx: python documentation generator][5]*) 
+5. **(Investigar esto)** *[Sphinx: python documentation generator][5]* 
 
-6. **(Investigar esto)** (*[Heroku: Cloud Application Platform][6]*) 
+6. **(Investigar esto)** *[Heroku: Cloud Application Platform][6]* 
 
-7. (*[psycopg][7]*)
+7. *[psycopg][7]*
 
 
 
