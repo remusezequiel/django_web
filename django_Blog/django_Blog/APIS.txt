@@ -1,0 +1,4 @@
+# django-import-export
+https://django-import-export.readthedocs.io/en/latest/installation.html
+# django-ckeditor
+https://django-ckeditor.readthedocs.io/en/latest/

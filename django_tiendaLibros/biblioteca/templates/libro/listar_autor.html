@@ -1,0 +1,54 @@
+{% extends 'index.html' %}
+
+{% block titulo %}
+  Lista de autores
+{% endblock titulo %}
+
+{% block extracss %}
+<style media="screen">
+table {
+   width: 80%;
+   border: 1px solid #000;
+}
+th, td {
+   text-align: left;
+   vertical-align: top;
+   border: 1px solid #000;
+}
+</style>
+
+{% endblock extracss %}
+
+{% block body %}
+  {% if autores %}
+    <table>
+      <thead>
+        <tr>
+          <th>#</th>
+          <th>Nombre</th>
+          <th>Apellidos</th>
+          <th>Nacionalidad</th>
+          <th>Descripción</th>
+          <th>Opciones</th>
+        </tr>
+      </thead>
+      <tbody>
+          {% for autor in autores %}
+          <tr>
+            <th>{{ autor.id }}</th>
+            <th>{{ autor.nombre }}</th>
+            <th>{{ autor.apellidos }}</th>
+            <th>{{ autor.nacionalidad }}</th>
+            <th>{{ autor.descripcion }}</th>
+            <td>
+              <a href="{% url 'libro:editar_autor' autor.id %}">Editar</a>
+              <a href="{% url 'libro:eliminar_autor' autor.id %}">Eliminar</a>
+            </td>
+          </tr>
+          {% endfor %}
+      </tbody>
+    </table>
+  {% else %}
+    <h1>No existen autores registrados</h1>
+  {% endif %}
+{% endblock body %}

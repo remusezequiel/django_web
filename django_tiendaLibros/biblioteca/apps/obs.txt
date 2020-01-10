@@ -1,0 +1,5 @@
+Para mayor orden se crea esta carpeta la cual va a tener todas las aplicaciones separadas del proyecto
+
+Para crear las apps dentro de esta carpeta se utiliza el comando:
+
+  django-admin startapp nombreDeLaApp
