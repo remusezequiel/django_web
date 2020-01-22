@@ -1,11 +1,18 @@
+##############################################################################
 from django.contrib import admin
 from .models import *
 from import_export import resources
 from import_export.admin import ImportExportModelAdmin
+##############################################################################
+
 
 # Register your models here.
 ##############################################################################
-class CategoriaResources(resources.ModelResource):
+class CategoriaResrsources(resources.ModelResource):
+    """
+    Esta clase es necesaria para la importacion y exportacion de datos
+    relacionada
+    """
     class Meta:
         model = Categoria
 ##############################################################################
@@ -30,6 +37,11 @@ class AutorAdmin(ImportExportModelAdmin, admin.ModelAdmin):
     resource_class = AutorResources
 ##############################################################################
 
+
+##############################################################################
+# REGISTRO DE APLICACIONES #
+############################
 admin.site.register(Categoria, CategoriaAdmin)
 admin.site.register(Autor, AutorAdmin)
 admin.site.register(Post)
+##############################################################################

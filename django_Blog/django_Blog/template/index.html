@@ -73,6 +73,7 @@
       </div>
     </div>
   </header>
+ 
   <!-- Barra de busqueda -->
 {% block busqueda %}
  <div class="container">
@@ -84,7 +85,9 @@
              <input type="text" class="form-control" placeholder="Filtra tu busqueda" name="buscar" >
              <span class="input-group-list">
                <i class="icon icon-search"></i>
-              <button type="submit" class="boton btn-success">Buscar</button>
+              <button type="submit" class="boton btn-success">
+                Buscar
+              </button>
              </span>
            </div>
          </div>
@@ -102,6 +105,9 @@
         {% if post %}
           {% for p in post %}
           <div class="post-preview">
+            {# Vemos que como url le pasamos blog/posts.html #}
+            {# Que esta sobre el views y le pasamos tambien #}
+            {# campo slug asociado al prollecto como id #}
             <a href="{% url 'blog:posteo' p.slug %}">
               <h2 class="post-title">
                 {{ p.titulo }}
@@ -128,7 +134,8 @@
   </div>
   <hr>
 {% endblock content%}
-  <!-- Footer -->
+ 
+<!-- Footer -->
   <footer>
     <div class="container">
       <div class="row">
