@@ -1,0 +1,13 @@
+{% extends "blog/base.html" %}
+
+
+{% block content %}
+    <div class="content-seccion">
+      <h2>Has cerrado sesion</h2>
+      <div class="border-top pt-3">
+        <small class="text-muted">
+          <a href="{% url 'login' %}">Iniciar sesion otra vez</a>
+        </small>
+      </div>
+    </div>
+{% endblock %}

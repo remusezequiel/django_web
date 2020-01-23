@@ -1,0 +1,36 @@
+{% extends "blog/base.html" %}
+
+{# Este tag es para crispy forms #}
+{% load crispy_forms_tags %}
+
+{% block content %}
+    <div class="content-seccion">
+      <div class="media">
+        <img class="reounded-circle account-img" src="{{ user.profile.image.url }}">
+        <div class="media-body">
+          <h2 class="account-heading">{{ user.username }}</h2>
+          <p class="text-secoundary">{{ user.email }}</p>
+
+
+          <form class="" action="" method="POST" enctype="multipart/form-data">
+            {% csrf_token %}
+            <fieldset class="form-group">
+              <legend class="border-bottom mb-4">Informacion del perfil</legend>
+              {{ u_form|crispy }}
+              {{ p_form|crispy }}
+            </fieldset>
+            <div class="form-group">
+              <button type="submit" class="btn bnt-outline-info">Subir</button>
+            </div>
+          </form>
+
+        </div>
+      </div>
+
+      <div class="border-top pt-3">
+        <small class="text-muted">
+          {{ user.username }} <a href="{% url 'logout' %}">Cerrar Sesion</a>
+        </small>
+      </div>
+    </div>
+{% endblock %}

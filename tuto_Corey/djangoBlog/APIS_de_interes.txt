@@ -1,0 +1,12 @@
+###############
+crispy_forms
+###############
+https://django-crispy-forms.readthedocs.io/en/latest/
+INSTALACION : pip install django-crispy-forms
+CONFIGURACION : ir al setting.py y en INSTALLED_APPS introducir:
+    'crispy_forms',
+Por otro lado, debajo de statics es necesario
+Luego, debes ir a la documentacion y ver que es lo que tenes que modificar en la
+variable => CRISPY_TEMPLATE_PACK
+En el caso de este documento como usamos bootstrap4 colocamos
+CRISPY_TEMPLATE_PACK = 'bootstrap4'

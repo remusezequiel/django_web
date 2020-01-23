@@ -1,0 +1,49 @@
+#Uso de administrador y base de datos en django
+
+#(1) ABRIMOS EL SHELL
+python manage.py SHELL
+
+#(2) Uso de django.contrib.auth.models => User
+from django.contrib.auth.models import User
+User.object.all()
+User.object.first()
+User.objects.filter(username='nombreDelUsuarioAFiltrar')
+User.objects.filter(username='nombreDelUsuarioAFiltrar').first()
+#Podemos guardarlo en una variable
+user = User.objects.filter(username='nombreDelUsuarioAFiltrar')
+#Y ahora podemos jugar un poco:
+user.id #devuelve el id del usuario
+user.pk #Devuelve la clave primaria
+#Otra forma de trabajar con un usuario en particular es:
+#Creamos la variable usuario y le pasamos lo siguiente
+user = User.objects.get(id=1) #Con esto tenemos el usuario cuyo id es 1
+
+#(3) Uso de nombreApp.models => classModelo
+"""
+Primero debemos importar los modelos pertenecientes a la aplicacion
+Esto se hace con:
+"""
+
+from nombreApp.models import classModelo
+
+"""
+Donde nombreApp es el nombre de la aplicacion de la cual estamos importando
+el models.py y de este importamos la clase classModelo que representa a una
+las tablas creadas en dicho modelo
+"""
+#Vemos cuantos modelos tenemos creados:
+classModelo.objects.all()
+#podemos crear el valor de una clase particular utilizando:
+var = classModelo(Param_1='filtro',Param_2='filtro',...)
+#Luego, debemos guardarlo
+var.save()
+
+############################################
+# Ejemplo de como subir un posteo del blog #
+############################################
+#Abrimos el shell con python manage.py, luego
+from django.contrib.auth.models import User
+from nombreApp.models import classModelo
+user = User.objects.get(id=1) #Devuelve el usuario de id=1
+post = Post(title='Post 1', content='Contenido del post', author=user)
+post.save()
