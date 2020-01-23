@@ -2,12 +2,13 @@ from django.db import models
 from django.utils import timezone
 from django.contrib.auth.models import User
 from django.urls import reverse
+from ckeditor.fields import RichTextField
 # Create your models here.
 
 #Clase que maneja los posteos
 class Post(models.Model):
     title = models.CharField(max_length=100)
-    content = models.TextField()
+    content = RichTextField()#models.TextField()
     #Al pazarle timezone.now la fecha se creara automaticamente
     #en el momento en el cual se crea el posteo
     date_posted = models.DateTimeField(default=timezone.now)
@@ -21,4 +22,4 @@ class Post(models.Model):
         return ("%s,%s") %(self.title, self.author)
 
     def get_absolute_url(self):
-        return reverse('post-detail', kwargs={'pk':self.pk})    
+        return reverse('post-detail', kwargs={'pk':self.pk})
